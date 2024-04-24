@@ -1,6 +1,6 @@
 ﻿using Aquality.Appium.Mobile.Screens.ScreenFactory;
 using Aquality.Appium.Mobile.Template.Models;
-using Aquality.Appium.Mobile.Template.Screens.Login;
+using Aquality.Appium.Mobile.Template.Screens.WebLogin;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -24,7 +24,13 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
                 .TapLogin();
         }
 
-        [Then(@"Login Screen is opened")]
+        [When(@"I authorize log in")]
+        public void IAuthorizeLogIn()
+        {
+            loginScreen.TapAccept();
+        }
+
+        [Then(@"Web Login Screen is opened")]
         public void LoginScreenIsOpened()
         {
             Assert.IsTrue(loginScreen.State.WaitForDisplayed(), "Login Screen is opened");

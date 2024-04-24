@@ -3,7 +3,7 @@ using Aquality.Appium.Mobile.Screens.ScreenFactory;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
-namespace Aquality.Appium.Mobile.Template.Screens.Login
+namespace Aquality.Appium.Mobile.Template.Screens.WebLogin
 {
     [ScreenType(PlatformName.IOS)]
     public sealed class IosLoginScreen : LoginScreen
@@ -17,5 +17,6 @@ namespace Aquality.Appium.Mobile.Template.Screens.Login
         protected override By PasswordTxbLoc => MobileBy.IosNSPredicate("type == 'XCUIElementTypeSecureTextField' AND name == 'password'");
 
         protected override By LoginBtnLoc => MobileBy.IosClassChain("**/XCUIElementTypeOther[`name == 'loginBtn'`][2]");
+        protected override By AcceptBtnLoc => throw new System.NotImplementedException();
     }
 }
