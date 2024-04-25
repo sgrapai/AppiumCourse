@@ -50,7 +50,7 @@
   },
   "timeouts": {
     "timeoutImplicit": 0,
-    "timeoutCondition": 45,//default:45
+    "timeoutCondition": 7,//default:45
     "timeoutPollingInterval": 300,
     "timeoutCommand": 400
   },

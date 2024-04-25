@@ -83,5 +83,17 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         {
             exploreScreen.ScrollDownToPost();
         }
+
+        [When(@"I get the current context")]
+        public void WhenIGetContext()
+        {
+            _context["currentContext"] = exploreScreen.ShowContextHandles();
+        }
+
+        [Then(@"Current context should be '(.*)'")]
+        public void CurrentContextShouldBe(string expected)
+        {
+            Assert.AreEqual(expected, _context["currentContext"].ToString(), "Current context is not a native app");
+        }
     }
 }

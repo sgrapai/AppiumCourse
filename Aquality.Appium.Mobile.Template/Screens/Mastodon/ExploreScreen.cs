@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using Aquality.Appium.Mobile.Actions;
 using Aquality.Appium.Mobile.Applications;
 using Aquality.Appium.Mobile.Elements.Interfaces;
@@ -49,16 +50,19 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 
             return position;
         }
-        public void TapByPosition(int X, int Y)
-        {
-            AqualityServices.TouchActions.SwipeWithLongPress(new Point(X, Y), new Point(X, Y));
-        }
+        public void TapByPosition(int X, int Y) => AqualityServices.TouchActions.SwipeWithLongPress(new Point(X, Y), new Point(X, Y));
         public void SetSearchfield(string value) => searchfield.SendKeys(value);
         public string GetSearchfieldValue() => searchfield.Text;
         public void TapFirstResult() => searchResults.Click();
-        public void ScrollDownToPost()
+        public void ScrollDownToPost() => fourthPost.TouchActions.ScrollToElement(SwipeDirection.Down);
+        public string ShowContextHandles()
         {
-            fourthPost.TouchActions.ScrollToElement(SwipeDirection.Down);
+            foreach (var item in AqualityServices.Application.Driver.Contexts)
+            {
+                Console.WriteLine(item);
+            }
+
+            return AqualityServices.Application.Driver.Context;
         }
     }
 }

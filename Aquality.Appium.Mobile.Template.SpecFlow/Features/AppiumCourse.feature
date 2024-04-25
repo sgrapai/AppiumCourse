@@ -55,3 +55,21 @@ Scenario Outline: Interaction with elements
 	When I tap on search
 		And I open first result
 		And I scroll down to fourth post
+
+@Course
+@Task10
+Scenario Outline: Task context
+	Then Mastodon Login Screen is opened
+	When I tap on log in button
+		And Select Mastodon.social server
+	Then Web Login Screen is opened
+	When I log in with data:
+		| Name     | Value                  |
+		| Username | taccs.grapai@gmail.com |
+		| Password | 9wsjdxyZ!fyXLu8        |
+		And I authorize log in
+	Then Mastodon app is opened
+	When I tap on Explore
+	Then There are posts displayed
+	When I get the current context
+	Then Current context should be 'NATIVE_APP'
