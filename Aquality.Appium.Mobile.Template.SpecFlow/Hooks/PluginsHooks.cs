@@ -1,9 +1,9 @@
-﻿using Allure.Commons;
+﻿using System.Text.RegularExpressions;
+using Allure.Commons;
 using Aquality.Appium.Mobile.Applications;
 using Aquality.Appium.Mobile.Template.Applications;
 using AqualityTracking.Integrations.Core;
 using NUnit.Framework;
-using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
 namespace Aquality.Appium.Mobile.Template.SpecFlow.Hooks

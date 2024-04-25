@@ -5,7 +5,7 @@ using OpenQA.Selenium.Appium;
 namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 {
     [ScreenType(Mobile.Applications.PlatformName.Android)]
-    internal class AndroidLoginScreen : LoginScreen
+    public sealed class AndroidLoginScreen : LoginScreen
     {
         public AndroidLoginScreen() : base(By.XPath("//android.widget.ImageView[@resource-id=\"org.joinmastodon.android:id/art_center_hill\"]"))
         {

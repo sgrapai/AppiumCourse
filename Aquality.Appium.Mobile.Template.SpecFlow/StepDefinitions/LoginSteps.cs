@@ -37,13 +37,13 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         }
 
         [When(@"I save Login Screen dump")]
-        public void SaveLoginScreenDump() 
+        public void SaveLoginScreenDump()
         {
             loginScreen.Dump.Save();
         }
 
         [Then("Login Screen dump is different")]
-        public void LoginScreenDumpIsDifferent() 
+        public void LoginScreenDumpIsDifferent()
         {
             Assert.That(loginScreen.Dump.Compare(), Is.GreaterThan(0), "The form dump should differ");
         }

@@ -1,8 +1,8 @@
-﻿using Aquality.Appium.Mobile.Applications;
+﻿using System;
+using System.IO;
+using Aquality.Appium.Mobile.Applications;
 using Aquality.Selenium.Core.Visualization;
 using SkiaSharp;
-using System;
-using System.IO;
 
 namespace Aquality.Appium.Mobile.Template.Utilities
 {

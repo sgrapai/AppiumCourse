@@ -23,7 +23,8 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         }
 
         [When("I accept the alert")]
-        public void AcceptAlert() {
+        public void AcceptAlert()
+        {
             alert.TapOk();
         }
     }

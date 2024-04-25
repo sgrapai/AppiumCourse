@@ -1,8 +1,8 @@
-﻿using Allure.Commons;
+﻿using System;
+using Allure.Commons;
 using Aquality.Selenium.Core.Configurations;
 using Aquality.Selenium.Core.Localization;
 using Aquality.Selenium.Core.Logging;
-using System;
 
 namespace Aquality.Appium.Mobile.Template.Utilities
 {

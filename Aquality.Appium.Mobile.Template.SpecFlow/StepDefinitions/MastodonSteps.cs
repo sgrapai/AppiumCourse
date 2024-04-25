@@ -55,17 +55,5 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         {
             homeScreen.TapExplore();
         }
-
-        [When(@"I tap the first post")]
-        public void TapOnFirstPost()
-        {
-            homeScreen.TapFirstPost();
-        }
-
-        [Then(@"First post is opened")]
-        public void FirstPostIsOpened()
-        {
-            Assert.IsTrue(homeScreen.IsPostOpened(), "Post is not being displayed.");
-        }
     }
 }

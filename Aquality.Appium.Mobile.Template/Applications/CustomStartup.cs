@@ -1,10 +1,10 @@
-﻿using Aquality.Appium.Mobile.Applications;
+﻿using System;
+using Aquality.Appium.Mobile.Applications;
 using Aquality.Appium.Mobile.Template.Utilities;
 using Aquality.Selenium.Core.Applications;
 using Aquality.Selenium.Core.Configurations;
 using Aquality.Selenium.Core.Localization;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace Aquality.Appium.Mobile.Template.Applications
 {

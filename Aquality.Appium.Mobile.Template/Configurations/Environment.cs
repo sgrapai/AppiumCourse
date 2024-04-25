@@ -1,7 +1,7 @@
-﻿using Aquality.Appium.Mobile.Applications;
+﻿using System.Reflection;
+using Aquality.Appium.Mobile.Applications;
 using Aquality.Selenium.Core.Configurations;
 using Aquality.Selenium.Core.Utilities;
-using System.Reflection;
 
 namespace Aquality.Appium.Mobile.Template.Configurations
 {

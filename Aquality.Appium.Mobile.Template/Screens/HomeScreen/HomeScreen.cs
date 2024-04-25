@@ -5,7 +5,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.HomeScreen
 {
     public abstract class HomeScreen : Screen
     {
-        protected HomeScreen(By locator):base(locator, "Main home screen.")
+        protected HomeScreen(By locator) : base(locator, "Main home screen.")
         {
 
         }

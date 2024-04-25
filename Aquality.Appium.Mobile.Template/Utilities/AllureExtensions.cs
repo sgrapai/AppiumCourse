@@ -1,6 +1,6 @@
-﻿using Allure.Commons;
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
+using Allure.Commons;
 
 namespace Aquality.Appium.Mobile.Template.Utilities
 {

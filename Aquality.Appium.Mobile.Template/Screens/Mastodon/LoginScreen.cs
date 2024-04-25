@@ -1,7 +1,6 @@
 ﻿using Aquality.Appium.Mobile.Elements.Interfaces;
 using Aquality.Appium.Mobile.Screens;
 using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.V108.Target;
 
 namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 {
@@ -12,7 +11,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
         protected readonly IButton serverBtn;
         protected readonly IButton nextBtn;
 
-        protected LoginScreen(By locator):base(locator, "Mastodon log in screen")
+        protected LoginScreen(By locator) : base(locator, "Mastodon log in screen")
         {
             loginBtn = ElementFactory.GetButton(LoginBtnLoc, "Login");
             serverTxb = ElementFactory.GetTextBox(ServerBoxLoc, "Server selection text box");
