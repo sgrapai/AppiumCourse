@@ -77,16 +77,22 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.Features
         {
 #line 3
 #line hidden
+#line 4
+ testRunner.Given("Connection is ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+ testRunner.When("I launch Mastodon app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Testing connection with appium server")]
-        [NUnit.Framework.CategoryAttribute("course")]
+        [NUnit.Framework.CategoryAttribute("Course")]
         [NUnit.Framework.CategoryAttribute("Task7")]
         public void TestingConnectionWithAppiumServer()
         {
             string[] tagsOfScenario = new string[] {
-                    "course",
+                    "Course",
                     "Task7"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Testing connection with appium server", null, tagsOfScenario, argumentsOfScenario, featureTags);
@@ -118,12 +124,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Searching for items and startup/shutdown of applications")]
-        [NUnit.Framework.CategoryAttribute("course")]
+        [NUnit.Framework.CategoryAttribute("Course")]
         [NUnit.Framework.CategoryAttribute("Task8")]
         public void SearchingForItemsAndStartupShutdownOfApplications()
         {
             string[] tagsOfScenario = new string[] {
-                    "course",
+                    "Course",
                     "Task8"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Searching for items and startup/shutdown of applications", null, tagsOfScenario, argumentsOfScenario, featureTags);
@@ -190,128 +196,6 @@ this.FeatureBackground();
 #line hidden
 #line 34
  testRunner.Then("First post is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Interaction with elements")]
-        [NUnit.Framework.CategoryAttribute("Course")]
-        [NUnit.Framework.CategoryAttribute("Task9")]
-        public void InteractionWithElements()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Course",
-                    "Task9"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Interaction with elements", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 38
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-#line 39
- testRunner.Then("Mastodon Login Screen is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 40
- testRunner.When("I tap on log in button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 41
-  testRunner.And("Select Mastodon.social server", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 42
- testRunner.Then("Web Login Screen is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name",
-                            "Value"});
-                table2.AddRow(new string[] {
-                            "Username",
-                            "taccs.grapai@gmail.com"});
-                table2.AddRow(new string[] {
-                            "Password",
-                            "9wsjdxyZ!fyXLu8"});
-#line 43
- testRunner.When("I log in with data:", ((string)(null)), table2, "When ");
-#line hidden
-#line 47
-  testRunner.And("I authorize log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 48
- testRunner.Then("Mastodon app is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 49
- testRunner.When("I tap on Explore", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 50
- testRunner.Then("There are posts displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 51
- testRunner.When("I get the position of the searchfield", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 52
-  testRunner.And("I tap the searchfield by position", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 53
-  testRunner.And("Fill in \'Tests\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 54
- testRunner.Then("The search request should be \'Tests\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 55
- testRunner.When("I tap on search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 56
-  testRunner.And("I open first result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 57
-  testRunner.And("I scroll down to fourth post", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Task context")]
-        [NUnit.Framework.CategoryAttribute("Course")]
-        [NUnit.Framework.CategoryAttribute("Task10")]
-        public void TaskContext()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Course",
-                    "Task10"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Task context", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 61
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-#line 73
- testRunner.Then("There are posts displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 74
- testRunner.When("I get the current context", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 75
- testRunner.Then("Current context should be \'NATIVE_APP\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

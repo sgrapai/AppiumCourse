@@ -1,4 +1,6 @@
-﻿using Aquality.Appium.Mobile.Screens.ScreenFactory;
+﻿using System;
+using System.Text.RegularExpressions;
+using Aquality.Appium.Mobile.Screens.ScreenFactory;
 using Aquality.Appium.Mobile.Template.Models;
 using Aquality.Appium.Mobile.Template.Screens.Keyboard;
 using Aquality.Appium.Mobile.Template.Screens.Mastodon;
@@ -81,7 +83,7 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         [When(@"I scroll down to fourth post")]
         public void WhenScrollDownTo()
         {
-            exploreScreen.ScrollDownToPost();
+            exploreScreen.ScrollToPost();
         }
 
         [When(@"I get the current context")]
@@ -94,6 +96,31 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         public void CurrentContextShouldBe(string expected)
         {
             Assert.AreEqual(expected, _context["currentContext"].ToString(), "Current context is not a native app");
+        }
+
+        [When(@"I get the position of the first post")]
+        public void PositionOfFirstPost()
+        {
+            _context["firstPostText"] = exploreScreen.GetPostText();
+        }
+
+        [When(@"I scroll down to post (\d*)")]
+        public void ScrollToPost(int number)
+        {
+            exploreScreen.ScrollToPost(number);
+        }
+
+        [When(@"Scroll back to first post")]
+        public void ScrollBack()
+        {
+            exploreScreen.ScrollBackToPost(_context["firstPostText"].ToString());
+        }
+
+        [When(@"Probe")]
+        public void Probe()
+        {
+            string elementLocator = "(4//android.widget.LinearLayout/android.widget.TextView[@resource-id=\"org.joinmastodon.android:id/text\"])[1])";
+            Console.WriteLine(Regex.Replace(elementLocator, "\\[\\d\\]", "[2]"));
         }
     }
 }

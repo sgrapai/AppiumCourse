@@ -101,17 +101,17 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
     testRunner.When("I save Login Screen dump", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Value"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Username",
                             "MyUsername"});
-                table3.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "Password",
                             "InVal1dPa$$w0rd"});
 #line 8
-  testRunner.And("I log in with data:", ((string)(null)), table3, "And ");
+  testRunner.And("I log in with data:", ((string)(null)), table2, "And ");
 #line hidden
 #line 12
  testRunner.Then("\'Invalid login credentials, please try again\' alert appears", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
