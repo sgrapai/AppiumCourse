@@ -37,6 +37,11 @@ namespace Aquality.Appium.Mobile.Template.Utilities
             MoveToPoint(element, quarterPoint);
         }
 
+        public static void TapCenter()
+        {
+            AqualityServices.TouchActions.SwipeWithLongPress(absoluteCenter, absoluteCenter);
+        }
+
         private static void MoveToPoint(IElement element, Point endPoint)
         {
             element.TouchActions.Swipe(endPoint);

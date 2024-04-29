@@ -73,6 +73,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
         public void SetSearchfield(string value) => searchfield.SendKeys(value);
         public string GetSearchfieldValue() => searchfield.Text;
         public void TapFirstResult() => searchResults.Click();
+        public void TapSearchfield() => searchfield.Click();
         public void ScrollToPost() => fourthPost.TouchActions.ScrollToElement(SwipeDirection.Down);
         public string ShowContextHandles()
         {
@@ -83,7 +84,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 
             return AqualityServices.Application.Driver.Context;
         }
-        public void ScrollToPost(int postNumber)
+        public int ScrollToPost(int postNumber)
         {
             int counter = 0;
             while (counter < postNumber)
@@ -107,9 +108,12 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
                     int index = postNumber - counter;
                     ILabel targetPost = postHeaderList[index - 1];
                     ScrollUtilities.ScrollUntilQuarter(targetPost);
+                    counter += index;
                     break;
                 }
             }
+
+            return counter;
         }
         public void ScrollBackToPost(string parameter)
         {

@@ -2,6 +2,7 @@
 using Allure.Commons;
 using Aquality.Appium.Mobile.Applications;
 using Aquality.Appium.Mobile.Template.Applications;
+using Aquality.Appium.Mobile.Template.Configurations;
 using AqualityTracking.Integrations.Core;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -23,7 +24,7 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.Hooks
         [BeforeFeature]
         public static void RegisterCustomStartup()
         {
-            AqualityServices.SetStartup(new CustomStartup());
+            AqualityServices.SetStartup(new CustomMobileStartup("settings.new.json"));
         }
 
         [AfterScenario(Order = -1)]

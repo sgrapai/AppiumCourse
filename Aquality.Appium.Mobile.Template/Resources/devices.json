@@ -1,15 +1,22 @@
 ﻿{
-  "iOS_Simulator": {
-    "capabilities": {
-      "deviceName": "iPhone 8",
-      "platformVersion": "16.2"
-    }
-  },
+    "iOS_Simulator": {
+        "capabilities": {
+            "deviceName": "iPhone 8",
+            "platformVersion": "16.2"
+        }
+    },
     "Android_Emulator": {
         "capabilities": {
             "deviceName": "Android 13 pixel 6a",
             "platformVersion": "13.0",
             "udid": "emulator-5554"
+        }
+    },
+    "Android_14": {
+        "capabilities": {
+            "deviceName": "Android 14 pixel 3a",
+            "platformVersion": "14.0",
+            "udid": "emulator-5556"
         }
     }
 }

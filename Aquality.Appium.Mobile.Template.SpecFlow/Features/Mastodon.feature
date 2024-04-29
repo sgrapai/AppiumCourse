@@ -39,7 +39,35 @@ Scenario Outline: Swipes and appium visibility
 	When I get the position of the first post
 		And I scroll down to post 4
 		And Scroll back to first post
-		#And I scroll down to post 20
+		And I scroll down to post 20
+
+@Course
+@Task13
+Scenario Outline: Appium visibility
+	When I scroll down to post 20
+	Then Post 20 is being displayed
+
+@Course
+@Task14
+Scenario Outline: Keyboard processing
+	When I get the position of the searchfield
+		And I tap the searchfield by position
+		Then The keyboard is being displayed
+		When I tap on search
+		Then The keyboard shouldn't be displayed
+	When I tap the searchfield
+		Then The keyboard is being displayed
+		When I send keys to the keyboard
+		Then The keyboard shouldn't be displayed
+	When I tap the searchfield
+		Then The keyboard is being displayed
+		When I hide the keyboard
+		Then The keyboard shouldn't be displayed
+	When I tap the searchfield
+		Then The keyboard is being displayed
+		When I tap outside the keyboard
+		Then The keyboard shouldn't be displayed
+
 
 @Probes
 Scenario: Probes

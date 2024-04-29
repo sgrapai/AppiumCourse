@@ -107,13 +107,25 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         [When(@"I scroll down to post (\d*)")]
         public void ScrollToPost(int number)
         {
-            exploreScreen.ScrollToPost(number);
+            _context["postNumber"] = exploreScreen.ScrollToPost(number);
         }
 
         [When(@"Scroll back to first post")]
         public void ScrollBack()
         {
             exploreScreen.ScrollBackToPost(_context["firstPostText"].ToString());
+        }
+
+        [Then(@"Post (\d*) is being displayed")]
+        public void IsPostDisplayed(int number)
+        {
+            Assert.AreEqual(number, (int)_context["postNumber"], $"The post shown was other than {number}");
+        }
+
+        [When(@"I tap the searchfield")]
+        public void TapSearchfield()
+        {
+            exploreScreen.TapSearchfield();
         }
 
         [When(@"Probe")]
