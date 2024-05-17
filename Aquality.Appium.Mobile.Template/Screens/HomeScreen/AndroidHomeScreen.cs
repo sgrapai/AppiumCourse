@@ -7,7 +7,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.HomeScreen
     [ScreenType(PlatformName.Android)]
     public sealed class AndroidHomeScreen : HomeScreen
     {
-        public AndroidHomeScreen() : base(By.XPath("//android.widget.ScrollView[@text='']"))
+        public AndroidHomeScreen() : base(By.XPath("//android.widget.ImageView[@resource-id='org.joinmastodon.android:id/art_center_hill']"))
         {
 
         }

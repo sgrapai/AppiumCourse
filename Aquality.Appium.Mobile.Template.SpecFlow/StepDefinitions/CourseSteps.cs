@@ -18,13 +18,13 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
 
         [Given(@"Connection is ok")]
         [Then(@"Home Screen is opened")]
-        public void ConnectionIsOk()
+        public void IsConnectionOk()
         {
             Assert.IsTrue(homeScreen.State.WaitForDisplayed(), "Home screen is not displayed.");
         }
 
         [When(@"I launch Mastodon app")]
-        public void WhenILaunchApp()
+        public void LaunchMastodonApp()
         {
             AqualityServices.Application.Driver.ActivateApp("org.joinmastodon.android");
         }

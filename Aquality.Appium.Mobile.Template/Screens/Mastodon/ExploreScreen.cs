@@ -52,8 +52,11 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 
 
         public void TapFirstPost() => posts.Click();
+
         public bool IsPostOpened() => toolbar.State.WaitForDisplayed();
+
         public bool ArePosts() => posts.State.WaitForDisplayed();
+
         public ElementPosition GetSearchfieldPos()
         {
             Point location = searchLabel.GetElement().Location;
@@ -65,16 +68,29 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 
             return position;
         }
+
         public string GetPostText()
         {
             return posts.FindChildElement<IButton>(By.XPath(childrenBodyLoc)).Text;
         }
-        public void TapByPosition(int X, int Y) => AqualityServices.TouchActions.SwipeWithLongPress(new Point(X, Y), new Point(X, Y));
+
+        public void TapByPosition(object position)
+        {
+            ElementPosition elementPos = position as ElementPosition;
+            Point pointPosition = new Point(elementPos.X, elementPos.Y);
+            AqualityServices.TouchActions.SwipeWithLongPress(pointPosition, pointPosition); 
+        }
+
         public void SetSearchfield(string value) => searchfield.SendKeys(value);
+
         public string GetSearchfieldValue() => searchfield.Text;
+
         public void TapFirstResult() => searchResults.Click();
+
         public void TapSearchfield() => searchfield.Click();
+
         public void ScrollToPost() => fourthPost.TouchActions.ScrollToElement(SwipeDirection.Down);
+
         public string ShowContextHandles()
         {
             foreach (var item in AqualityServices.Application.Driver.Contexts)
@@ -84,6 +100,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 
             return AqualityServices.Application.Driver.Context;
         }
+
         public int ScrollToPost(int postNumber)
         {
             int counter = 0;
@@ -115,6 +132,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
 
             return counter;
         }
+
         public void ScrollBackToPost(string parameter)
         {
             string postLoc = childrenBodyLoc.Replace("]", $" and contains(@text, \"{parameter}\")]");

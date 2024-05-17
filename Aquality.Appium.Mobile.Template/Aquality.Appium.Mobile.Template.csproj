@@ -5,13 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Environment\Prod\config.json" />
-    <None Remove="Resources\Environment\Stage\config.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Environment\Prod\config.json" />
-    <EmbeddedResource Include="Resources\Environment\Stage\config.json" />
+    <Content Remove="C:\Users\s.grapai\.nuget\packages\allure.commons\3.5.0.73\contentFiles\any\netstandard2.0\allureConfig.Template.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,16 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Applications\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Resources\Applications\TheApp-v1.10.0.apk">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Applications\TheApp-v1.10.0.app.zip">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Resources\devices.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -7,6 +7,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
     public abstract class HomeScreen : Screen
     {
         protected readonly IButton exploreTabBtn;
+
         protected HomeScreen(By locator) : base(locator, "Mastodon Home screen.")
         {
             exploreTabBtn = ElementFactory.GetButton(ExploreLoc, "Explore tab");

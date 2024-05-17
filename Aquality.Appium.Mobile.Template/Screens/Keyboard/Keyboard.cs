@@ -19,8 +19,11 @@ namespace Aquality.Appium.Mobile.Template.Screens.Keyboard
         protected abstract By SearchBtnLoc { get; }
 
         public void Hide() => AqualityServices.Application.Driver.HideKeyboard();
+
         public void SendEnter() => (AqualityServices.Application.Driver as AndroidDriver).PressKeyCode(AndroidKeyCode.Enter);
+
         public void TapSearch() => searchBtn.Click();
+
         public void TapOutside() => ScrollUtilities.TapCenter();
     }
 }

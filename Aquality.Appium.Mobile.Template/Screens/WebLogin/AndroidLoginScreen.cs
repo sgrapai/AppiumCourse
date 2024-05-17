@@ -12,11 +12,9 @@ namespace Aquality.Appium.Mobile.Template.Screens.WebLogin
         {
         }
 
-        protected override By UsernameTxbLoc => MobileBy.XPath("//android.widget.EditText[@resource-id=\"user_email\"]");
-
-        protected override By PasswordTxbLoc => MobileBy.XPath("//android.widget.EditText[@resource-id=\"user_password\"]");
-
+        protected override By UsernameTxbLoc => MobileBy.XPath("//android.webkit.WebView[@text='Log in - Mastodon']/android.view.View[2]/android.view.View[2]/android.view.View[2]/android.widget.EditText");
+        protected override By PasswordTxbLoc => MobileBy.XPath("//android.webkit.WebView[@text='Log in - Mastodon']/android.view.View[2]/android.view.View[3]/android.view.View[2]/android.widget.EditText");
         protected override By LoginBtnLoc => MobileBy.XPath("//android.widget.Button[@text='Log in']");
-        protected override By AcceptBtnLoc => MobileBy.XPath("//android.widget.Button[@text=\"Authorize\"]");
+        protected override By AcceptBtnLoc => MobileBy.XPath("//android.widget.Button[@text='Authorize']");
     }
 }

@@ -18,32 +18,34 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
             loginScreen = factory.GetScreen<LoginScreen>();
         }
 
+        [Given(@"Mastodon app is opened")]
         [Then(@"Mastodon app is opened")]
-        public void ThenAppIsOpen()
+        public void IsMastodonAppOpened()
         {
             Assert.IsTrue(homeScreen.State.WaitForDisplayed(), "Mastodon home screen is not being displayed.");
         }
 
+        [Given(@"Mastodon Login Screen is opened")]
         [Then(@"Mastodon Login Screen is opened")]
-        public void MLSIsOpened()
+        public void IsMastodonLoginScreenOpened()
         {
             Assert.IsTrue(loginScreen.State.WaitForDisplayed(), "Mastodon login screen is not opened.");
         }
 
         [When(@"I close Mastodon app")]
-        public void WhenICloseApp()
+        public void CloseApp()
         {
             AqualityServices.Application.Driver.TerminateApp("org.joinmastodon.android");
         }
 
         [When(@"I tap on log in button")]
-        public void WhenILogIn()
+        public void TapLogIn()
         {
             loginScreen.TapLogin();
         }
 
         [When(@"Select Mastodon.social server")]
-        public void WhenISelectServer()
+        public void SelectServer()
         {
             loginScreen.SetServer("Mastodon.social")
                 .SelectServer()

@@ -16,36 +16,24 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
             loginScreen = screenFactory.GetScreen<LoginScreen>();
         }
 
-        [When(@"I log in with data:")]
-        public void IFillInLoginForm(LoginModel loginModel)
+        [When(@"I log in Mastodon.social with '(.*)' username and '(.*)' password")]
+        public void FillInLoginForm(string username, string password)
         {
-            loginScreen.SetUsername(loginModel.Username)
-                .SetPassword(loginModel.Password)
+            loginScreen.SetUsername(username)
+                .SetPassword(password)
                 .TapLogin();
         }
 
         [When(@"I authorize log in")]
-        public void IAuthorizeLogIn()
+        public void AuthorizeLogIn()
         {
             loginScreen.TapAccept();
         }
 
         [Then(@"Web Login Screen is opened")]
-        public void LoginScreenIsOpened()
+        public void IsLoginScreenOpened()
         {
             Assert.IsTrue(loginScreen.State.WaitForDisplayed(), "Login Screen is opened");
-        }
-
-        [When(@"I save Login Screen dump")]
-        public void SaveLoginScreenDump()
-        {
-            loginScreen.Dump.Save();
-        }
-
-        [Then("Login Screen dump is different")]
-        public void LoginScreenDumpIsDifferent()
-        {
-            Assert.That(loginScreen.Dump.Compare(), Is.GreaterThan(0), "The form dump should differ");
         }
     }
 }

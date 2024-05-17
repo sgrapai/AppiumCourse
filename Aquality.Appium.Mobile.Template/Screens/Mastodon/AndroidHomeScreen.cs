@@ -8,11 +8,11 @@ namespace Aquality.Appium.Mobile.Template.Screens.Mastodon
     [ScreenType(PlatformName.Android)]
     internal class AndroidHomeScreen : HomeScreen
     {
-        public AndroidHomeScreen() : base(By.XPath("(//android.widget.TextView[@text=\"Home\"])[1]"))
+        public AndroidHomeScreen() : base(By.XPath("(//android.widget.TextView[@text='Home'])[1]"))
         {
 
         }
 
-        protected override By ExploreLoc => MobileBy.XPath("//android.widget.FrameLayout[@content-desc=\"Search\"]");
+        protected override By ExploreLoc => MobileBy.XPath("//android.widget.FrameLayout[@content-desc='Search']");
     }
 }

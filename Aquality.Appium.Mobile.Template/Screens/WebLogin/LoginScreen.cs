@@ -20,9 +20,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.WebLogin
         }
 
         protected abstract By UsernameTxbLoc { get; }
-
         protected abstract By PasswordTxbLoc { get; }
-
         protected abstract By LoginBtnLoc { get; }
         protected abstract By AcceptBtnLoc { get; }
 
@@ -39,6 +37,7 @@ namespace Aquality.Appium.Mobile.Template.Screens.WebLogin
         }
 
         public void TapLogin() => loginBtn.Click();
+
         public void TapAccept() => acceptBtn.Click();
     }
 }

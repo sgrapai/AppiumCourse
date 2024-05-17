@@ -20,7 +20,6 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.Hooks
         public void RegisterDependencies()
         {
             objectContainer.RegisterInstanceAs<IScreenFactory>(AqualityServices.ScreenFactory);
-            objectContainer.RegisterInstanceAs<IScreenshotProvider>(new ScreenshotProvider());
         }
     }
 }

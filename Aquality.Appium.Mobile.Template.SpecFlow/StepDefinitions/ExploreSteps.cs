@@ -30,7 +30,7 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         }
 
         [Then(@"First post is opened")]
-        public void FirstPostIsOpened()
+        public void IsFirstPostOpened()
         {
             Assert.IsTrue(exploreScreen.IsPostOpened(), "Post is not being displayed.");
         }
@@ -41,31 +41,30 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
             Assert.IsTrue(exploreScreen.ArePosts(), "There are no posts being displayed");
         }
 
-        [When(@"I get the position of the searchfield")]
-        public void GetPositionOfSearchField()
+        [When(@"I get the position of the searchfield and save it as '(.*)'")]
+        public void GetPositionOfSearchField(string contextKey)
         {
             ElementPosition position = exploreScreen.GetSearchfieldPos();
-            _context["searchfieldPos.X"] = position.X;
-            _context["searchfieldPos.Y"] = position.Y;
+            _context[contextKey] = position;
         }
 
-        [When(@"I tap the searchfield by position")]
-        public void WhenITapByPosition()
+        [When(@"I tap the searchfield by position at '(.*)'")]
+        public void TapSearchfieldByPosition(string contextKey)
         {
-            exploreScreen.TapByPosition((int)_context["searchfieldPos.X"], (int)_context["searchfieldPos.Y"]);
+            exploreScreen.TapByPosition(_context[contextKey]);
         }
 
         [When(@"Fill in '(.*)'")]
-        public void FillIn(string value)
+        public void FillInSearchfield(string value)
         {
             exploreScreen.SetSearchfield(value);
         }
 
         [Then(@"The search request should be '(.*)'")]
-        public void ThenRequestShouldBe(string expectedValue)
+        public void IsRequestEqualTo(string expectedValue)
         {
             string actualValue = exploreScreen.GetSearchfieldValue();
-            Assert.AreEqual(expectedValue, actualValue, "The expected value is not the same as the actual.");
+            Assert.AreEqual(expectedValue, actualValue, "Text in searchfield is not the same as expected");
         }
 
         [When(@"I tap on search")]
@@ -81,37 +80,38 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         }
 
         [When(@"I scroll down to fourth post")]
-        public void WhenScrollDownTo()
+        public void ScrollDownToPostFour()
         {
             exploreScreen.ScrollToPost();
         }
 
         [When(@"I get the current context")]
-        public void WhenIGetContext()
+        public void GetCurrentContext()
         {
             _context["currentContext"] = exploreScreen.ShowContextHandles();
         }
 
         [Then(@"Current context should be '(.*)'")]
-        public void CurrentContextShouldBe(string expected)
+        public void IsCurrentContextEqualTo(string expected)
         {
-            Assert.AreEqual(expected, _context["currentContext"].ToString(), "Current context is not a native app");
+            string currentContext = _context["currentContext"].ToString();
+            Assert.AreEqual(expected, currentContext, "Current context is not a native app");
         }
 
         [When(@"I get the position of the first post")]
-        public void PositionOfFirstPost()
+        public void GetPositionOfFirstPost()
         {
             _context["firstPostText"] = exploreScreen.GetPostText();
         }
 
         [When(@"I scroll down to post (\d*)")]
-        public void ScrollToPost(int number)
+        public void ScrollDownToPost(int number)
         {
             _context["postNumber"] = exploreScreen.ScrollToPost(number);
         }
 
         [When(@"Scroll back to first post")]
-        public void ScrollBack()
+        public void ScrollBackUp()
         {
             exploreScreen.ScrollBackToPost(_context["firstPostText"].ToString());
         }
@@ -119,20 +119,13 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
         [Then(@"Post (\d*) is being displayed")]
         public void IsPostDisplayed(int number)
         {
-            Assert.AreEqual(number, (int)_context["postNumber"], $"The post shown was other than {number}");
+            Assert.AreEqual(number, (int)_context["postNumber"], "The post displayed is not the expected number of post");
         }
 
         [When(@"I tap the searchfield")]
         public void TapSearchfield()
         {
             exploreScreen.TapSearchfield();
-        }
-
-        [When(@"Probe")]
-        public void Probe()
-        {
-            string elementLocator = "(4//android.widget.LinearLayout/android.widget.TextView[@resource-id=\"org.joinmastodon.android:id/text\"])[1])";
-            Console.WriteLine(Regex.Replace(elementLocator, "\\[\\d\\]", "[2]"));
         }
     }
 }

@@ -27,8 +27,8 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
             keyboard.Hide();
         }
 
-        [When(@"I send keys to the keyboard")]
-        public void SendKeys()
+        [When(@"I press enter on keyboard")]
+        public void PressEnter()
         {
             keyboard.SendEnter();
         }
@@ -54,7 +54,7 @@ namespace Aquality.Appium.Mobile.Template.SpecFlow.StepDefinitions
             }
             catch(Exception e)
             {
-                Console.WriteLine("The keyboard was not hid");
+                Assert.Fail("The keyboard was not hidden");
             }
         }
     }
